@@ -1,33 +1,39 @@
 import requests
 import pandas as pd
 
-# URL de la API (en este caso, datos de Seattle)
+# URL base de la API
 url = "https://data.seattle.gov/resource/teqw-tu6e.json"
 
-try:
-    # Hacer la solicitud GET a la API
-    response = requests.get(url)
+# Inicializar variables para la paginación
+limit = 1000  # Número de registros por solicitud
+offset = 0    # Desplazamiento inicial
+all_data = [] # Lista para almacenar todos los datos
 
-    # Verificar si la solicitud fue exitosa (código 200)
+while True:
+    # Definir parámetros de la solicitud
+    params = {
+        "$limit": limit,
+        "$offset": offset
+    }
+    
+    # Realizar la solicitud GET a la API
+    response = requests.get(url, params=params)
+    
+    # Verificar si la solicitud fue exitosa
     if response.status_code == 200:
-        # Convertir la respuesta a formato JSON
         data = response.json()
-
-        # Convertir los datos JSON a un DataFrame
-        df = pd.DataFrame(data)
-
-        # Imprimir el DataFrame
-        print("DataFrame creado:")
-
-        # Opcional: Guardar el DataFrame en un archivo CSV
-        df.to_csv("Data/datos_seattle.csv", index=False)
-        print("Datos guardados en 'datos_seattle.csv'")
-
+        if not data:
+            # Si no se reciben más datos, salir del bucle
+            break
+        all_data.extend(data)
+        offset += limit  # Incrementar el desplazamiento
     else:
         print(f"Error en la solicitud: Código de estado {response.status_code}")
+        break
 
+# Convertir la lista de datos a un DataFrame de pandas
+df = pd.DataFrame(all_data)
 
-except requests.exceptions.RequestException as e:
-    print(f"Ocurrió un error: {e}")
-
-df.head()
+# Opcional: Guardar el DataFrame en un archivo CSV
+df.to_csv("Data/datos_seattle.csv", index=False)
+print(f"Datos guardados en 'datos_seattle.csv' con {len(df)} registros.")
