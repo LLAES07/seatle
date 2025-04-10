@@ -1,0 +1,42 @@
+,feature,importance
+38,propertygfatotal,0.6780546015389689
+40,epapropertytype_encoded,0.06878245938688954
+32,datayear,0.06619878867455505
+34,longitude,0.03513549511055673
+33,latitude,0.03329394528214186
+35,yearbuilt,0.031534026291053216
+37,numberofbuildings,0.02606041679235065
+36,numberoffloors,0.01640170904051032
+39,energystarscore,0.015901877740523308
+4,buildingtype_Nonresidential,0.009397689323009018
+12,neighborhood_Lake Union,0.0067433155700763825
+9,neighborhood_Downtown,0.0033248221108220376
+15,neighborhood_Northeast,0.0021320460275248147
+7,neighborhood_Central,0.0011419105957276405
+0,buildingtype_Campus,0.001045702814435172
+11,neighborhood_Greater Duwamish,0.001005336338751716
+20,compliancestatus_Not Compliant,0.0006447401689126418
+19,compliancestatus_Compliant,0.0005554460464998039
+24,complianceissue_Missing Eui Or Electricity Data,0.00042725630958810536
+31,complianceissue_Portfolio Manager Not Connected To The City Of Seattle,0.0004027821373181679
+1,buildingtype_Multifamily Hr (10+),0.00039276819504358316
+10,neighborhood_East,0.00028476293621645986
+30,complianceissue_No Issue,0.0002656477123559538
+29,"complianceissue_Missing Eui, Incomplete Natural Gas Data",0.00023344315417124766
+13,neighborhood_Magnolia / Queen Anne,0.00020847270755969073
+16,neighborhood_Northwest,0.00016285285064288578
+17,neighborhood_Southeast,4.355467680039629e-05
+18,neighborhood_Southwest,3.94034908226557e-05
+21,complianceissue_Account Requires Verification,3.511345817792393e-05
+14,neighborhood_North,2.4995807899300966e-05
+3,buildingtype_Multifamily Mr (5-9),2.4791270169481754e-05
+5,buildingtype_Sps-District K-12,2.453867709018891e-05
+6,neighborhood_Ballard,2.1876757952185212e-05
+22,complianceissue_Default Data,1.8635663907302476e-05
+2,buildingtype_Multifamily Lr (1-4),1.634848035328952e-05
+8,neighborhood_Delridge Neighborhoods,1.1955863618104493e-05
+25,complianceissue_Missing Eui Or Utility Data,5.4146559916398065e-06
+28,"complianceissue_Missing Eui, Incomplete Fuel Data",6.597358101809754e-07
+26,complianceissue_Missing Eui Or Utility Data And Account Requires Verification,3.1778840575671014e-07
+23,complianceissue_Missing Data,7.881679660644897e-08
+27,"complianceissue_Missing Eui, Incomplete Electricity Data",0.0
