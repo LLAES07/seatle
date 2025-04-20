@@ -1,3 +1,8 @@
+
+# **Descripción del Proyecto**
+
+Este proyecto tiene como objetivo desarrollar un modelo predictivo para estimar el consumo de electricidad de edificios en Seattle (en kWh), utilizando datos públicos de eficiencia energética y características de los edificios. Se exploran diferentes técnicas de machine learning y deep learning, con especial énfasis en la comparación de modelos tradicionales (Random Forest, XGBoost) y redes neuronales (Keras, PyTorch).
+
 | Nombre de la Columna                     | Descripción                                                                                                                                                                | Nombre en la API                    | Tipo de Dato |
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|--------------|
 | OSEBuildingID                           | Identificador único asignado a cada propiedad cubierta por la Ordenanza de Benchmarking de Seattle para su seguimiento e identificación.                                  | osebuildingid                        | Text         |
