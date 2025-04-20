@@ -68,3 +68,31 @@ Este proyecto tiene como objetivo desarrollar un modelo predictivo para estimar 
 **Encoding**: One-Hot para variables categóricas con pocas categorías; Target Encoding para variables de alta cardinalidad.
 
 **Split train/test:** División temporal o aleatoria (80/20), manteniendo la estacionalidad semanal cuando corresponde.
+
+
+
+# **Selección de Características**
+
+Análisis de correlación y multicolinealidad (VIF).
+
+Eliminación de variables redundantes (por ejemplo: múltiples EUI con alta correlación).
+
+
+# **Modelado**
+
+_Modelos Evaluados_
+
+Lineales: Ridge, Lasso, BayesianRidge, sv
+
+Ensamble: RandomForestRegressor, XGBRegressor.
+
+
+_Validación_
+
+Cross-Validation: RepeatedKFold (5 folds × 3 repeticiones).
+
+Métricas: R², RMSE, MAE en conjunto de validación y test.
+
+Importancia de características basada en Random Forest y XGBoost para refinar el set final.
+
+
