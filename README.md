@@ -58,3 +58,13 @@ Este proyecto tiene como objetivo desarrollar un modelo predictivo para estimar 
 | TotalGHGEmissions                       | Emisiones totales de gases de efecto invernadero (en toneladas métricas de CO₂e).                                                                                          | totalghgemissions                   | Number       |
 | GHGEmissionsIntensity                   | Intensidad de emisiones de GEI por área construida (kgCO₂e/pies²).                                                                                                          | ghgemissionsintensity               | Number       |
 | Demolished                              | Indica si la propiedad ha sido demolida al ciclo de reporte de 2023.                                                                                                       | demolished                           | Checkbox     |
+
+# **Preprocesamiento**
+
+**Limpieza**: Eliminación de registros con valores nulos críticos.
+
+**Transformaciones**: Aplicación de log(1 + x) o Box–Cox para normalizar distribuciones muy sesgadas.
+
+**Encoding**: One-Hot para variables categóricas con pocas categorías; Target Encoding para variables de alta cardinalidad.
+
+**Split train/test:** División temporal o aleatoria (80/20), manteniendo la estacionalidad semanal cuando corresponde.
