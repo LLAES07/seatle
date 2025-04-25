@@ -1,3 +1,15 @@
+
+# **Descripción del Proyecto**
+
+Este proyecto tiene como objetivo desarrollar un modelo predictivo para estimar el consumo de electricidad de edificios en Seattle (en kWh), utilizando datos públicos de eficiencia energética y características de los edificios. Se exploran diferentes técnicas de machine learning y deep learning, con especial énfasis en la comparación de modelos tradicionales (Random Forest, XGBoost) y redes neuronales (Keras, PyTorch).
+
+
+# **Datos**
+
+**Fuente:** Data.Seattle.Gov – Building Energy Benchmarking (2018–2023)
+
+**Variables**
+
 | Nombre de la Columna                     | Descripción                                                                                                                                                                | Nombre en la API                    | Tipo de Dato |
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------|--------------|
 | OSEBuildingID                           | Identificador único asignado a cada propiedad cubierta por la Ordenanza de Benchmarking de Seattle para su seguimiento e identificación.                                  | osebuildingid                        | Text         |
@@ -46,3 +58,41 @@
 | TotalGHGEmissions                       | Emisiones totales de gases de efecto invernadero (en toneladas métricas de CO₂e).                                                                                          | totalghgemissions                   | Number       |
 | GHGEmissionsIntensity                   | Intensidad de emisiones de GEI por área construida (kgCO₂e/pies²).                                                                                                          | ghgemissionsintensity               | Number       |
 | Demolished                              | Indica si la propiedad ha sido demolida al ciclo de reporte de 2023.                                                                                                       | demolished                           | Checkbox     |
+
+# **Preprocesamiento**
+
+**Limpieza**: Eliminación de registros con valores nulos críticos.
+
+**Transformaciones**: Aplicación de log(1 + x) o Box–Cox para normalizar distribuciones muy sesgadas.
+
+**Encoding**: One-Hot para variables categóricas con pocas categorías; Target Encoding para variables de alta cardinalidad.
+
+**Split train/test:** División temporal o aleatoria (80/20), manteniendo la estacionalidad semanal cuando corresponde.
+
+
+
+# **Selección de Características**
+
+Análisis de correlación y multicolinealidad (VIF).
+
+Eliminación de variables redundantes (por ejemplo: múltiples EUI con alta correlación).
+
+
+# **Modelado**
+
+_Modelos Evaluados_
+
+Lineales: Ridge, Lasso, BayesianRidge, sv
+
+Ensamble: RandomForestRegressor, XGBRegressor.
+
+
+_Validación_
+
+Cross-Validation: RepeatedKFold (5 folds × 3 repeticiones).
+
+Métricas: R², RMSE, MAE en conjunto de validación y test.
+
+Importancia de características basada en Random Forest y XGBoost para refinar el set final.
+
+
